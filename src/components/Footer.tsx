@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img src={logo} alt="B STAR Technology Logo" className="h-16 w-auto" />
+              <img src={logo} alt="B STAR Technology Logo" className="h-16 w-auto rounded-full" />
             </div>
             <p className="text-gold/60 text-sm mb-4">
               Your trusted mobile repair partner. Fast, reliable, and professional service at your doorstep.
