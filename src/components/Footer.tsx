@@ -82,16 +82,16 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+919995069984"
                   className="flex items-center gap-2 text-gold/60 hover:text-gold transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
-                  +1 (234) 567-890
+                  +91 99950 69984
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/1234567890"
+                  href="https://wa.me/919995069984"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gold/60 hover:text-gold transition-colors text-sm"
@@ -102,16 +102,16 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:contact@bstar.com"
+                  href="mailto:msuhaibom@gmail.com"
                   className="flex items-center gap-2 text-gold/60 hover:text-gold transition-colors text-sm"
                 >
                   <Mail className="w-4 h-4" />
-                  contact@bstar.com
+                  msuhaibom@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-gold/60 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>123 Tech Street, Downtown<br />City, State 12345</span>
+                <span>Kondotty, Malappuram<br />Kerala, India</span>
               </li>
             </ul>
           </div>
