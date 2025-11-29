@@ -50,13 +50,13 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <Button variant="hero" size="xl" asChild>
-                <a href="tel:+1234567890">
+                <a href="tel:+919995069984">
                   <Phone className="w-5 h-5" />
                   Call Technician Now
                 </a>
               </Button>
               <Button variant="whatsapp" size="xl" asChild>
-                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/919995069984" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp Us
                 </a>

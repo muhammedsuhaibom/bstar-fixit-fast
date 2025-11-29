@@ -21,19 +21,19 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Cards */}
           <a
-            href="tel:+1234567890"
+            href="tel:+919995069984"
             className="group bg-card rounded-2xl p-8 border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center"
           >
             <div className="w-16 h-16 bg-navy rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gold transition-colors">
               <Phone className="w-8 h-8 text-gold group-hover:text-navy-dark transition-colors" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2">Call Us</h3>
-            <p className="text-gold font-semibold text-xl mb-2">+1 (234) 567-890</p>
+            <p className="text-gold font-semibold text-xl mb-2">+91 99950 69984</p>
             <p className="text-muted-foreground text-sm">Available 24/7 for emergencies</p>
           </a>
 
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/919995069984"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-card rounded-2xl p-8 border border-border hover:border-[#25D366]/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center"
@@ -47,14 +47,14 @@ const Contact = () => {
           </a>
 
           <a
-            href="mailto:contact@bstar.com"
+            href="mailto:msuhaibom@gmail.com"
             className="group bg-card rounded-2xl p-8 border border-border hover:border-gold/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center"
           >
             <div className="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-navy transition-colors">
               <Mail className="w-8 h-8 text-navy group-hover:text-gold transition-colors" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
-            <p className="text-navy font-semibold text-xl mb-2">contact@bstar.com</p>
+            <p className="text-navy font-semibold text-xl mb-2">msuhaibom@gmail.com</p>
             <p className="text-muted-foreground text-sm">We reply within 2 hours</p>
           </a>
         </div>
@@ -67,8 +67,8 @@ const Contact = () => {
               <h3 className="text-gold font-bold text-lg">Our Location</h3>
             </div>
             <p className="text-gold/80 mb-4">
-              123 Tech Street, Downtown<br />
-              City, State 12345
+              Kondotty, Malappuram<br />
+              Kerala, India
             </p>
             <p className="text-gold/60 text-sm">
               * We also offer on-site repairs at your location!
@@ -105,13 +105,13 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <a href="tel:+1234567890">
+              <a href="tel:+919995069984">
                 <Phone className="w-5 h-5" />
-                Call Now: +1 (234) 567-890
+                Call Now: +91 99950 69984
               </a>
             </Button>
             <Button variant="whatsapp" size="xl" asChild>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/919995069984" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp Us
               </a>
