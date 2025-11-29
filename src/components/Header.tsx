@@ -1,6 +1,7 @@
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import logo from "@/assets/logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,17 +18,8 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                <span className="text-navy-dark font-bold text-xl">B</span>
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gold rounded-full animate-pulse-slow" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-gold font-bold text-lg leading-tight">B STAR</span>
-              <span className="text-gold/70 text-xs leading-tight">Mobile Technician</span>
-            </div>
+          <a href="#" className="flex items-center">
+            <img src={logo} alt="B STAR Technology Logo" className="h-12 w-auto" />
           </a>
 
           {/* Desktop Navigation */}

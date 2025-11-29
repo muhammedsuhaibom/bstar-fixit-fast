@@ -1,4 +1,5 @@
-import { Star, Phone, MessageCircle, Mail, MapPin } from "lucide-react";
+import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,17 +10,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                  <span className="text-navy-dark font-bold text-xl">B</span>
-                </div>
-                <Star className="absolute -top-1 -right-1 w-3 h-3 text-gold fill-gold" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-gold font-bold text-lg leading-tight">B STAR</span>
-                <span className="text-gold/50 text-xs leading-tight">Mobile Technician</span>
-              </div>
+            <div className="mb-4">
+              <img src={logo} alt="B STAR Technology Logo" className="h-16 w-auto" />
             </div>
             <p className="text-gold/60 text-sm mb-4">
               Your trusted mobile repair partner. Fast, reliable, and professional service at your doorstep.
