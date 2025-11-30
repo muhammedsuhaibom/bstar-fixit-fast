@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar, Clock, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
 
 const deviceTypes = [
   "iPhone",
@@ -28,6 +30,14 @@ const issues = [
   "Other",
 ];
 
+const bookingSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
+  phone: z.string().trim().min(1, "Phone is required").max(20, "Phone number is too long"),
+  device: z.string().min(1, "Please select a device type"),
+  issue: z.string().min(1, "Please select an issue type"),
+  message: z.string().max(1000, "Message is too long").optional(),
+});
+
 const BookingForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,16 +53,45 @@ const BookingForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Validate form data
+    const validation = bookingSchema.safeParse(formData);
+    if (!validation.success) {
+      toast({
+        title: "Validation Error",
+        description: validation.error.errors[0]?.message || "Please check your input",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
 
-    toast({
-      title: "Booking Received!",
-      description: "We'll contact you within 30 minutes to confirm your appointment.",
-    });
+    try {
+      const { error } = await supabase.from("bookings").insert({
+        name: formData.name.trim(),
+        phone: formData.phone.trim(),
+        device: formData.device,
+        issue: formData.issue,
+        message: formData.message?.trim() || null,
+      });
 
-    setFormData({ name: "", phone: "", device: "", issue: "", message: "" });
-    setIsSubmitting(false);
+      if (error) throw error;
+
+      toast({
+        title: "Booking Received!",
+        description: "We'll contact you within 30 minutes to confirm your appointment.",
+      });
+
+      setFormData({ name: "", phone: "", device: "", issue: "", message: "" });
+    } catch (error) {
+      console.error("Booking error:", error);
+      toast({
+        title: "Booking Failed",
+        description: "Something went wrong. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -125,6 +164,7 @@ const BookingForm = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
+                  maxLength={100}
                   className="h-12"
                 />
               </div>
@@ -139,6 +179,7 @@ const BookingForm = () => {
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   required
+                  maxLength={20}
                   className="h-12"
                 />
               </div>
@@ -194,6 +235,7 @@ const BookingForm = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={3}
+                  maxLength={1000}
                 />
               </div>
 
